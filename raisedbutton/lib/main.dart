@@ -14,6 +14,17 @@ class MyApp extends StatefulWidget{
 }
 
 class _MyApp extends State <MyApp>{
+
+  String values = ' Hello Everyone! ';
+
+
+  void onButtonClick(){
+    setState(() {
+      values = 'Hope you all are doing well';
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -33,16 +44,30 @@ class _MyApp extends State <MyApp>{
               ),
             ),
             body: Card(
-              margin: EdgeInsets.all(40),
+              margin: EdgeInsets.all(0),
               color: Colors.indigo,
-              elevation: 90,
+              elevation: 0,
               child: Center(
                   child: Container(
+                    padding:    EdgeInsets.only(top: 50),
                     color: Colors.white,
-                    width:300,
-                    height:300,
+                    width:400,
+                    height:200,
+                    child: Column(
+                       children: <Widget>[
+                         Text(values, style: TextStyle(fontSize: 30)),
+                         RaisedButton(
+                           onPressed: onButtonClick,
+                           child: Text('Click Me'),
+                           color: Colors.white,
+                           textColor: Colors.red[900],
+                           elevation: 10,
+                           splashColor: Colors.red,
 
-                    child: RaisedButton(onPressed: () => { }, child: Text('Click Me'),color: Colors.grey,),
+                         ),
+                       ]
+
+                    )
                   )
               )
             )
