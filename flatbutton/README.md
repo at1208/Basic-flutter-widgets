@@ -1,1 +1,1 @@
-![]('flatebutton.gif')
+ ![](flatebutton.gif)
